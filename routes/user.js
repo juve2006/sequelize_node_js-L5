@@ -7,17 +7,17 @@ import { verifyToken } from "../middleware/auth.js"
 
 const router = express.Router();
 
-// router.get('/', verifyToken, getUsers);
-// router.post('/', verifyToken, validate(userValidations.createOrUpdateUserValidator), createUser);
-// router.get('/:id',verifyToken, getUser);
-// router.delete('/:id',verifyToken, deleteUser);
-// router.patch('/:id',verifyToken, validate(userValidations.createOrUpdateUserValidator), updateUser);
+router.get('/', verifyToken, getUsers);
+router.post('/', verifyToken, validate(userValidations.createOrUpdateUserValidator), createUser);
+router.get('/:id',verifyToken, getUser);
+router.delete('/:id',verifyToken, deleteUser);
+router.patch('/:id',verifyToken, validate(userValidations.createOrUpdateUserValidator), updateUser);
 
 
-router.get('/', getUsers);
-router.post('/', validate(userValidations.createOrUpdateUserValidator), createUser);
-router.get('/:id', getUser);
-router.delete('/:id', deleteUser);
-router.patch('/:id', validate(userValidations.createOrUpdateUserValidator), updateUser);
+// router.get('/', getUsers);
+// router.post('/', validate(userValidations.createOrUpdateUserValidator), createUser);
+// router.get('/:id', getUser);
+// router.delete('/:id', deleteUser);
+// router.patch('/:id', validate(userValidations.createOrUpdateUserValidator), updateUser);
 
 export default router;
